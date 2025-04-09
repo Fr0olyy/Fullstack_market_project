@@ -1,0 +1,136 @@
+// components/NewsSlider.module.scss
+.sliderContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+    height: 300px;
+}
+
+.slider {
+    width: 60%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    aspect-ratio: 16/9;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.5s ease-in-out;
+    display: flex;
+    align-items: flex-end;
+    text-decoration: none;
+    transform: translateX(100%);
+
+    &.active {
+        transform: translateX(0);
+        z-index: 1;
+    }
+}
+
+.slideContent {
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    color: white;
+}
+
+.slideTitle {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.controlButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #005bff;
+    cursor: pointer;
+    z-index: 2;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+        background-color: white;
+        transform: translateY(-50%) scale(1.1);
+    }
+
+    &.prev {
+        left: 15px;
+    }
+
+    &.next {
+        right: 15px;
+    }
+}
+
+.dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 2;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    padding: 0;
+
+    &:hover {
+        background-color: white;
+    }
+
+    &.active {
+        background-color: #005bff;
+        transform: scale(1.2);
+    }
+}
+
+@media (max-width: 1200px) {
+    .slider {
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .slider {
+        width: 95%;
+    }
+
+    .slideTitle {
+        font-size: 18px;
+    }
+
+    .controlButton {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+    }
+}

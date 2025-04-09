@@ -1,0 +1,126 @@
+// components/OzonHeader.module.scss
+.outerContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.header {
+    width: 60%; // Фиксированные 60% ширины
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 20px;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+.catalogButton {
+    background: #048030;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-weight: 600;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background 0.2s;
+
+    &:hover {
+        background: #059537;
+    }
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-right: 20px;
+    flex-shrink: 0;
+    color: #048030
+}
+
+.search {
+    flex-grow: 1;
+    position: relative;
+
+    &Input {
+        width: 90%;
+        padding: 10px 15px 10px 35px;
+        border: 1px solid #e0e0e0;
+        border-radius: 4px;
+        font-size: 16px;
+        outline: none;
+        transition: all 0.3s;
+
+        &:focus {
+            border-color: #005bff;
+            box-shadow: 0 0 0 2px rgba(0, 91, 255, 0.2);
+        }
+    }
+}
+
+.searchIcon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.6;
+}
+
+.nav {
+    display: flex;
+    gap: 20px;
+    flex-shrink: 0;
+
+    &Link {
+        color: #333;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+        white-space: nowrap;
+        position: relative;
+        padding-bottom: 4px;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #005bff;
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        &:hover::after {
+            transform: scaleX(1);
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .header {
+        width: 80%; // На узких экранах увеличиваем ширину
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        width: 95%;
+        flex-wrap: wrap;
+        padding: 10px;
+
+        .search {
+            order: 1;
+            width: 100%;
+        }
+
+        .nav {
+            width: 100%;
+            justify-content: space-around;
+        }
+    }
+}

@@ -1,0 +1,124 @@
+// components/ProductCard.module.scss
+.cardLink {
+    text-decoration: none;
+    color: inherit;
+}
+
+.card {
+    width: 180px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+}
+
+.imageContainer {
+    position: relative;
+    width: 100%;
+    height: 180px;
+}
+
+.productImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.discountBadge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: #ff4d4f;
+    color: white;
+    border-radius: 4px;
+    padding: 4px 6px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.productInfo {
+    padding: 12px;
+    flex-grow: 1;
+}
+
+.prices {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+.currentPrice {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+}
+
+.originalPrice {
+    font-size: 14px;
+    color: #999;
+    text-decoration: line-through;
+}
+
+.priceNote {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.brand {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.description {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 8px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: auto;
+}
+
+.stars {
+    color: #ffc107;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.reviews {
+    font-size: 12px;
+    color: #999;
+}
+
+.addToCartButton {
+    width: 100%;
+    padding: 10px;
+    background: #048030;
+    color: white;
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+
+    &:hover {
+        background: #0048cc;
+    }
+}

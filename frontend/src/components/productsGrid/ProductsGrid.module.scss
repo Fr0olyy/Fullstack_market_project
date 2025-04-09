@@ -1,0 +1,29 @@
+// components/ProductsGrid.module.scss
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.productsGrid {
+    width: 60%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 16px;
+    justify-content: center;
+}
+
+@media (max-width: 1200px) {
+    .productsGrid {
+        width: 80%;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .productsGrid {
+        width: 95%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
