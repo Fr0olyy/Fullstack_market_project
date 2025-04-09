@@ -29,10 +29,6 @@ func (h *AuthHandler) SignUp(c echo.Context) error {
 		return c.JSON(http.StatusBadRequest, map[string]string{"error": "invalid request"})
 	}
 
-	if err := c.Validate(req); err != nil {
-		return c.JSON(http.StatusBadRequest, map[string]string{"error": err.Error()})
-	}
-
 	user, err := h.authService.SignUp(auth.SignUpDTO{
 		Email:    req.Email,
 		Password: req.Password,
